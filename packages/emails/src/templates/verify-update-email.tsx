@@ -24,7 +24,7 @@ export function VerifyUpdateEmailTemplate(verificationLink: string) {
           <br />
           Thanks,
           <br />
-          Acme Inc. Team
+          Fintrack Team
         </Body>
       </Head>
     </Html>

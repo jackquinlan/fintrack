@@ -37,10 +37,9 @@ export function DeleteAccountCard({ currentUser }: { currentUser: User }) {
 
   async function handleSubmit() {
     startTransition(async () => {
-      deleteAccountAction({ id: currentUser.id ?? "" })
-        .catch((error) => {
-          if (error.message !== "NEXT_REDIRECT") setError(error.message);
-        });
+      deleteAccountAction({ id: currentUser.id ?? "" }).catch((error) => {
+        if (error.message !== "NEXT_REDIRECT") setError(error.message);
+      });
     });
   }
   const isDisabled =
@@ -53,7 +52,9 @@ export function DeleteAccountCard({ currentUser }: { currentUser: User }) {
         </CardHeader>
         <CardContent className="p-4 space-y-2">
           <div className="grid gap-4">
-            <p className="text-muted-foreground text-sm">Be careful! You cannot undo this action.</p>
+            <p className="text-muted-foreground text-sm">
+              Be careful! You cannot undo this action.
+            </p>
             {error && <Alert variant="destructive">{error}</Alert>}
             <AlertDialogTrigger asChild>
               <Button size="sm" variant="destructive" className="w-fit">

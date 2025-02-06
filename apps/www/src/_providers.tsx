@@ -19,9 +19,7 @@ export function Providers({
         enableColorScheme
         disableTransitionOnChange
       >
-        <TooltipProvider delayDuration={2}>
-          {children}
-        </TooltipProvider>
+        <TooltipProvider delayDuration={2}>{children}</TooltipProvider>
       </NextThemesProvider>
     </SessionProvider>
   );
